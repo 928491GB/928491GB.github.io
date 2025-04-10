@@ -1,4 +1,4 @@
-/* Загальний стиль сторінки */
+
 body {
   font-family: 'Courier New', monospace;
   background: radial-gradient(circle at center, #0a0a2e, #000);
@@ -27,7 +27,6 @@ body::before {
   animation: gridScan 20s linear infinite;
 }
 
-/* Контейнер */
 .container {
   position: relative;
   padding: 30px 40px;
@@ -41,7 +40,6 @@ body::before {
   transform: perspective(1000px) rotateX(5deg);
 }
 
-/* Заголовок */
 h1 {
   color: #00ff9d;
   text-shadow: 0 0 15px #00ff9d;
@@ -52,7 +50,7 @@ h1 {
   animation: textGlow 1.5s ease-in-out infinite alternate;
 }
 
-/* Статусний текст */
+
 #status {
   font-size: 18px;
   margin-bottom: 25px;
@@ -60,7 +58,7 @@ h1 {
   text-shadow: 0 0 10px #00ff9d;
 }
 
-/* Поле введення */
+
 input {
   background: rgba(0, 20, 15, 0.3);
   border: 2px solid #00ff9d;
@@ -84,8 +82,6 @@ input:focus {
   box-shadow: 0 0 15px #00ff9d55;
   border-color: #00ff9d;
 }
-
-/* Кнопка */
 button {
   background: linear-gradient(45deg, #00ff9d, #006B45);
   color: #000;
@@ -124,8 +120,6 @@ button:active {
   transform: scale(0.95);
   box-shadow: 0 0 15px #00ff9d;
 }
-
-/* Блок з ключем */
 #key-box {
   display: none;
   margin: 25px auto 0;
@@ -157,7 +151,6 @@ button:active {
   animation: keyboxScan 3s linear infinite;
 }
 
-/* Стилі для коду */
 code {
   font-size: 1.4em;
   color: #00ff9d;
@@ -171,8 +164,6 @@ code {
   -webkit-text-fill-color: transparent;
   animation: codePulse 1.5s ease-in-out infinite;
 }
-
-/* Анімації */
 @keyframes textGlow {
   from { text-shadow: 0 0 10px #00ff9d; }
   to { text-shadow: 0 0 20px #00ff9d, 0 0 30px #00ff9d33; }
