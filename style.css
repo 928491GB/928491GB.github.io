@@ -1,0 +1,200 @@
+/* Загальний стиль сторінки */
+body {
+  font-family: 'Courier New', monospace;
+  background: radial-gradient(circle at center, #0a0a2e, #000);
+  color: #00ff9d;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  overflow: hidden;
+  position: relative;
+}
+
+body::before {
+  content: '';
+  position: absolute;
+  width: 200%;
+  height: 200%;
+  background: 
+    linear-gradient(45deg, #00ff9d22 25%, transparent 25%),
+    linear-gradient(-45deg, #00ff9d22 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #00ff9d22 75%),
+    linear-gradient(-45deg, transparent 75%, #00ff9d22 75%);
+  background-size: 20px 20px;
+  opacity: 0.3;
+  animation: gridScan 20s linear infinite;
+}
+
+/* Контейнер */
+.container {
+  position: relative;
+  padding: 30px 40px;
+  background: rgba(0, 0, 0, 0.8);
+  border-radius: 15px;
+  border: 2px solid #00ff9d;
+  box-shadow: 0 0 30px #00ff9d55,
+              inset 0 0 15px #00ff9d33;
+  z-index: 1;
+  backdrop-filter: blur(5px);
+  transform: perspective(1000px) rotateX(5deg);
+}
+
+/* Заголовок */
+h1 {
+  color: #00ff9d;
+  text-shadow: 0 0 15px #00ff9d;
+  font-size: 2.5em;
+  margin: 0 0 25px 0;
+  letter-spacing: 3px;
+  font-weight: 300;
+  animation: textGlow 1.5s ease-in-out infinite alternate;
+}
+
+/* Статусний текст */
+#status {
+  font-size: 18px;
+  margin-bottom: 25px;
+  color: #00ff9d;
+  text-shadow: 0 0 10px #00ff9d;
+}
+
+/* Поле введення */
+input {
+  background: rgba(0, 20, 15, 0.3);
+  border: 2px solid #00ff9d;
+  color: #00ff9d;
+  padding: 12px 20px;
+  font-size: 16px;
+  border-radius: 8px;
+  margin: 10px 0;
+  width: 250px;
+  outline: none;
+  transition: all 0.3s ease;
+  font-family: 'Courier New', monospace;
+}
+
+input::placeholder {
+  color: #00ff9d77;
+  letter-spacing: 1px;
+}
+
+input:focus {
+  box-shadow: 0 0 15px #00ff9d55;
+  border-color: #00ff9d;
+}
+
+/* Кнопка */
+button {
+  background: linear-gradient(45deg, #00ff9d, #006B45);
+  color: #000;
+  border: none;
+  padding: 15px 35px;
+  font-size: 18px;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin: 15px;
+  letter-spacing: 1px;
+  box-shadow: 0 0 20px #00ff9d55;
+  position: relative;
+  overflow: hidden;
+}
+
+button::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(45deg, transparent, #ffffff22, transparent);
+  transform: rotate(45deg);
+  animation: btnScan 3s linear infinite;
+}
+
+button:hover {
+  box-shadow: 0 0 35px #00ff9d;
+  transform: translateY(-2px);
+  letter-spacing: 2px;
+}
+
+button:active {
+  transform: scale(0.95);
+  box-shadow: 0 0 15px #00ff9d;
+}
+
+/* Блок з ключем */
+#key-box {
+  display: none;
+  margin: 25px auto 0;
+  padding: 20px;
+  background: rgba(0, 20, 15, 0.3);
+  border: 2px solid #00ff9d;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 0 25px #00ff9d33,
+              inset 0 0 15px #00ff9d22;
+  max-width: 400px;
+  color: #00ff9d;
+}
+
+#key-box::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 50%;
+  height: 100%;
+  background: linear-gradient(
+    to right,
+    transparent 0%,
+    #00ff9d33 50%,
+    transparent 100%
+  );
+  animation: keyboxScan 3s linear infinite;
+}
+
+/* Стилі для коду */
+code {
+  font-size: 1.4em;
+  color: #00ff9d;
+  text-shadow: 0 0 15px #00ff9d;
+  font-weight: 700;
+  letter-spacing: 2px;
+  position: relative;
+  z-index: 2;
+  background: linear-gradient(45deg, #00ff9d, #006B45);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: codePulse 1.5s ease-in-out infinite;
+}
+
+/* Анімації */
+@keyframes textGlow {
+  from { text-shadow: 0 0 10px #00ff9d; }
+  to { text-shadow: 0 0 20px #00ff9d, 0 0 30px #00ff9d33; }
+}
+
+@keyframes gridScan {
+  from { transform: translate(0,0); }
+  to { transform: translate(-10px,10px); }
+}
+
+@keyframes btnScan {
+  0% { transform: rotate(45deg) translate(-30%, -30%); }
+  100% { transform: rotate(45deg) translate(30%, 30%); }
+}
+
+@keyframes keyboxScan {
+  0% { left: -100%; }
+  100% { left: 200%; }
+}
+
+@keyframes codePulse {
+  0% { opacity: 0.9; }
+  50% { opacity: 1; text-shadow: 0 0 25px #00ff9d; }
+  100% { opacity: 0.9; }
+}

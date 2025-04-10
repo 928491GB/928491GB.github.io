@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>Get Key</title>
+  <link rel="stylesheet" href="style.css">
+  <script defer src="key.js"></script>
+</head>
+<body>
+  <div class="container">
+    <h1>Key System</h1>
+    
+    <p id="status">Checking...</p>
+    
+    <div id="key-box" style="display:none;">
+      <p>Key:</p>
+      <code id="key">loading...</code>
+    </div>
+    
+    <button id="get-key" style="display:none;" onclick="generateKey()">Get Key</button>
+  </div>
+</body>
+</html>
